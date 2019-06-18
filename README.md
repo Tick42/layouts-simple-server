@@ -1,10 +1,8 @@
 ## Overview
 
-Glue Desktop can store layouts locally or use a REST service as a store.
-This package contains a simple REST server that serves as a layouts store for Glue Desktop. 
-This basic implementation stores the user layouts in files (same structure as the local files) and returns the same set of data for all users (does not take the user in account).
-New layouts are stored in files (using the name of the layout - there are no checks if the layouts name can be used as filename).
-Remove layout operation is not implemented and just logs on the console.
+Glue Desktop can store layouts locally or use a REST service as a store - this package contains a simple REST server that serves as a layouts store. 
+
+This basic implementation stores the user layouts in files (same structure as the local files) and returns the same set of data for all users (does not take the user in account).New layouts are stored in files (using the name of the layout - there are no checks if the layouts name can be used as filename). Remove layout operation is not implemented and just logs on the console.
 
 ## Prerequisites
 
