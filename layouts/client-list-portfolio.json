@@ -1,0 +1,68 @@
+{
+  "type": "Global",
+  "name": "client-list-portfolio",
+  "components": [
+    {
+      "application": "clientlist",
+      "type": "window",
+      "componentType": "application",
+      "state": {
+        "bounds": {
+          "left": 686,
+          "top": 269,
+          "width": 560,
+          "height": 640
+        },
+        "mode": "tab",
+        "windowState": "Normal",
+        "id": "13204_10",
+        "restoreSettings": {
+          "skipOffset": false,
+          "groupId": "13204_g_2",
+          "groupZOrder": 1
+        },
+        "channelId": null,
+        "allowChannels": false,
+        "isCollapsed": false,
+        "tabGroupId": "838dadd3cba84953be5bf4a21e3b3a6b",
+        "tabIndex": -1,
+        "context": {},
+        "activityContext": {}
+      }
+    },
+    {
+      "application": "clientportfolio",
+      "type": "window",
+      "componentType": "application",
+      "state": {
+        "bounds": {
+          "left": 1250,
+          "top": 269,
+          "width": 560,
+          "height": 640
+        },
+        "mode": "tab",
+        "windowState": "Normal",
+        "id": "13204_11",
+        "restoreSettings": {
+          "skipOffset": false,
+          "groupId": "13204_g_2",
+          "groupZOrder": 1
+        },
+        "channelId": null,
+        "allowChannels": false,
+        "isCollapsed": false,
+        "tabGroupId": "2228f900c9e847b6b7521fbf5e87a91a",
+        "tabIndex": -1,
+        "context": {
+          "clientId": "017892d7-e11e-4fde-90db-406bfc65f29e",
+          "sync": false
+        }
+      }
+    }
+  ],
+  "token": "DLM34pvEo",
+  "context": {
+    "defaultDate": "Tue Jun 18 2019 13:54:29 GMT+0300 (Eastern European Summer Time)"
+  }
+}
