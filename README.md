@@ -32,20 +32,24 @@ Add your layouts to the `layouts` folder (the folder can be changed by setting `
 
 If your Glue Desktop copy is not configured to use Rest Service you need to Edit `config/system.json` file (located in GlueDesktop directory)
 
-1.  Locate the *layoutsStore* config property (top-level). Should look something like
+1.  Locate the *layouts* config property (top-level). Should look something like
 ```json
- "layoutsStore": {
+ "layouts": {
+    "store": {
         "type": "file"
+    }
   }
 ```
 
 2. Update the layouts store to 
 ```json
- "layoutsStore": {
+ "layouts": {
+    "store": {
         "type": "rest",
         "restURL": "http://localhost:8004/",
         "restFetchInterval": 20
-  }
+      }
+  } 
 ```
 
 ## REST
