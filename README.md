@@ -1,38 +1,30 @@
 ## Overview
 
-Glue Desktop can store layouts locally or use a REST service as a store - this package contains a simple REST server that serves as a layouts store. 
+Glue42 Desktop can store layouts locally or use a REST service as a store. This package contains a simple REST server that operates as a layouts store. 
 
-This basic implementation stores the user layouts in files (same structure as the local files) and returns the same set of data for all users (does not take the user in account).New layouts are stored in files (using the name of the layout - there are no checks if the layouts name can be used as filename). Remove layout operation is not implemented and just logs on the console.
+This basic implementation stores the user layouts in files (they have the same structure as the local layouts files) and returns the same set of data for all users (does not take the user into account). New layouts are stored in files (using the name of the layout - there is no validation whether the layouts name can be used as a filename). The remove layout operation is not implemented and just logs to the console.
 
 ## Prerequisites
 
-npm
-Node 10 (probably can run with a lower one as well)
+In order to run the layouts server, you need to install `npm` and `Node v.10` (probably can run with a lower one as well).
 
-## Running
+## Running the Layouts Server
+
+Navigate to the server root directory and run from a command prompt:
 
 ```cmd
 npm i
 npm run start
 ```
 
-## Configuration
+The layouts server will start to listen on port 8004 and will load layouts from the `\layouts` folder. The environment variable `SERVER_PORT` can be used to override the default port and the default layouts folder can be changed by setting the `LAYOUTS_FOLDER` variable.
 
-### Configuring the server
+## Configuring Glue42 Desktop
 
-#### Port 
+If your Glue42 Desktop copy is not configured to load layouts from a REST service, you need to edit the `system.json` file located in the `%LocalAppData%\Tick42\GlueDesktop\config` folder.
 
-By default the server will listen on port 8004. The environment variable `SERVER_PORT` can be used to override that.
+1.  Locate the `layouts` top-level property:
 
-#### Layouts files
-
-Add your layouts to the `layouts` folder (the folder can be changed by setting `LAYOUTS_FOLDER` variable).
-
-### Configuring Glue Desktop
-
-If your Glue Desktop copy is not configured to use Rest Service you need to Edit `config/system.json` file (located in GlueDesktop directory)
-
-1.  Locate the *layouts* config property (top-level). Should look something like
 ```json
  "layouts": {
     "store": {
@@ -41,7 +33,8 @@ If your Glue Desktop copy is not configured to use Rest Service you need to Edit
   }
 ```
 
-2. Update the layouts store to 
+2. Update the layouts store to:
+
 ```json
  "layouts": {
     "store": {
@@ -52,10 +45,14 @@ If your Glue Desktop copy is not configured to use Rest Service you need to Edit
   } 
 ```
 
+* `type` - can be `file` or `rest`, depending on the type of layouts store you want to setup;
+* `restURL` - the URL address of the layouts REST service;
+* `restFetchInterval` - interval (in seconds) for fetching layouts from the REST service;
+
 ## REST
 
-The rest service implements:
+The REST service implements:
 
-* GET layouts -> returns all layouts. In a real implementation this should consider the user that is passed in the request headers
-* POST layouts -> creates/updates a layout. In this demo server 
-* DELETE layouts -> removes a layout. Does nothing in this Demo server
+* `GET` layouts - returns all layouts. In a real implementation this should consider the user that is passed in the request headers.
+* `POST` layouts - creates/updates a layout in this demo server; 
+* `DELETE` layouts - removes a layout. Does nothing in this demo server, only logs to the console;
