@@ -1,3 +1,7 @@
+# DEPRECATED:
+
+This example is deprecated in favor of a new [**Node.js Application and Layout Server Example**](https://github.com/Tick42/rest-config-example-node-js).
+
 ## Overview
 
 Glue42 Desktop can store layouts locally or use a REST service as a store. This package contains a simple REST server that operates as a layouts store. 
